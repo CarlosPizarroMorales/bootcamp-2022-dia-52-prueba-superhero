@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
+  
+  //* Main está oculto al comenzar
   $('.container').hide();
+  
   //* Función que captura el id del superhéroe:
   $('form').submit(function(e) {
     e.preventDefault();
@@ -35,12 +38,12 @@ $(document).ready(function() {
       };
 
       let chartDataSet = {
-        intelligence: ( data.powerstats.intelligence || 1 ),
-        strength: data.powerstats.strength || 1,
-        speed: data.powerstats.speed || 1,
-        durability: data.powerstats.durability || 1,
-        power: data.powerstats.power || 1,
-        combat: data.powerstats.combat || 1,
+        intelligence: Number(data.powerstats.intelligence) || 1,
+        strength: Number(data.powerstats.strength) || 1,
+        speed: Number(data.powerstats.speed) || 1,
+        durability: Number(data.powerstats.durability) || 1,
+        power: Number(data.powerstats.power) || 1,
+        combat:Number(data.powerstats.combat) || 1,
       };
 
       console.log(typeof chartDataSet.intelligence);
@@ -85,7 +88,7 @@ $(document).ready(function() {
         text: `Estadísticas de Poder para ${cardD.name}`
       },
       subtitles: [{
-        text: `Id de Héroe: ${id}`
+        text: `Id de Héroe: ${id} (1% indica que la estadística no está presente)`
       }],
       animationEnabled: true,
       data: [{
@@ -107,9 +110,8 @@ $(document).ready(function() {
       }]
     };
     $("#chartContainer").CanvasJSChart(options);
-
     $('.container').show();
-  }    
-});
+  } 
+}); //! END OF >> WINDOWS.ONLOAD
 
   
