@@ -11157,12 +11157,18 @@ body {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .form-control {
+    text-align: right;
+    padding-right: 0;
+  }
+}
 .navbar {
   max-height: 6rem;
 }
 
 .logo {
-  max-width: 250px;
+  width: clamp(80px, 12vw, 200px);
   transform: rotate(330deg);
   position: absolute;
   top: 0;
@@ -11173,6 +11179,10 @@ body {
   border-radius: 10px;
   min-width: 100% !important;
   text-align: center !important;
+}
+
+.card-text > span {
+  font-size: 0.8rem;
 }
 
 /**********************************************

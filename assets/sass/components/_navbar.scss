@@ -3,7 +3,7 @@
 }
 
 .logo {
-  max-width: 250px;
+  width: clamp(80px, 12vw, 200px);
   transform: rotate(330deg);
   position: absolute;
   top: 0;

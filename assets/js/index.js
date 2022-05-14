@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   
   //* Main está oculto al comenzar
-  $('.container').hide();
+  $('.container-fluid.main').hide();
   
   //* Función que captura el id del superhéroe:
   $('form').submit(function(e) {
@@ -83,6 +83,7 @@ $(document).ready(function() {
 
 
     let options = {
+      // width: 600, 
       colorSet: 'bootstrapColors',
       title: {
         text: `Estadísticas de Poder para ${cardD.name}`
@@ -110,7 +111,7 @@ $(document).ready(function() {
       }]
     };
     $("#chartContainer").CanvasJSChart(options);
-    $('.container').show();
+    $('.container-fluid.main').show();
   } 
 }); //! END OF >> WINDOWS.ONLOAD
 
